@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+ mydb:
+  image: mysql:8
+  environment:
+   MYSQL_ROOT_PASSWORD: ankit
+
+ mysite:
+  image: wordpress
+  ports:
+   -  5050:80
+  links:
+   -  mydb:mysql
